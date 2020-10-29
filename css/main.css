@@ -8,12 +8,7 @@
      padding: 0;
      width: 100%;
  }
-.footer {
-    border-top: 5px solid #CE2903;
-    padding: .8rem;
-    background-color: #343A40;
-    color: #ffffff;
-}
+
 img {
     width: 100%;
 }
@@ -35,4 +30,22 @@ h1 {
 .item2 {
     padding: 1rem;
     background-color: #E48D11;
+}
+.container {
+    padding: 1.8rem;
+}
+.radio-padding{
+    padding-left: 1.5rem;
+    margin: auto;
+ }
+.results {
+    margin: auto;
+    padding: 1.5rem;
+    text-align: center;
+}
+.footer {
+    border-top: 5px solid #CE2903;
+    padding: .8rem;
+    background-color: #343A40;
+    color: #ffffff;
 }
