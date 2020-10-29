@@ -43,6 +43,13 @@ h1 {
     padding: 1.5rem;
     text-align: center;
 }
+#msg {
+    color: red;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: auto;
+}
 .footer {
     border-top: 5px solid #CE2903;
     padding: .8rem;
