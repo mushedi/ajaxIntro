@@ -1,0 +1,38 @@
+/*
+ * Azul Lanas
+ * 10/26/2020
+ * Styling the cite
+ */
+ body {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+ }
+.footer {
+    border-top: 5px solid #CE2903;
+    padding: .8rem;
+    background-color: #343A40;
+    color: #ffffff;
+}
+img {
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1rem 0px;
+    color: #CE2903;
+    border-bottom: 5px solid #CE2903;
+    border-width: 50%;
+    margin: 0;
+}
+.item1 {
+    padding: 1rem;
+    background-color: #000000;
+
+}
+.item2 {
+    padding: 1rem;
+    background-color: #E48D11;
+}
