@@ -14,8 +14,8 @@ $header = file_get_contents('templates/header.html');
 $body = file_get_contents('templates/home.html');
 $footer = file_get_contents('templates/footer.html');
 
-$header_data = ["pagetitle" => "Home Page", "name" => "Home Page"];
-$body_data = ["hellowrld" => "Hello World"];
+$header_data = ["pagetitle" => "Home Page"];
+$body_data = ["hellowrld" => "Hello World", "name" => "Home Page"];
 
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
