@@ -3,13 +3,12 @@
 Calculator page html -->
 
 <h1>{{name}}</h1>
-<div>
-    <form name="calc-form" action="calc.php" method="post">
+<div class="padding">
+    <form name="calc-form">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 offset-sm-4">
                     <div id="msg" class="hidden">
-                        {{msg}}
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="text" id="num1" name="num1" maxlength="10" value="">
@@ -39,11 +38,13 @@ Calculator page html -->
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 offset-sm-4">
-                    <button class="form-control" id="calculate" type="submit">Calculate</button>
-                </div>
-            </div>
         </div>
     </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 offset-sm-4">
+                <button class="form-control" id="calculate" type="button">Calculate</button>
+            </div>
+        </div>
+    </div>
 </div>
