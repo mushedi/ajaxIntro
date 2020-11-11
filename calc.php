@@ -14,9 +14,9 @@ $body = file_get_contents('templates/result.html');
 $footer = file_get_contents('templates/footer.html');
 
  if (!empty($_POST)) {
-    if(!empty($_POST["num1"]) && !empty($_POST["num2"]) && !empty($_POST["oper"])){
-        $n1 = $_POST['num1'];
-        $n2 = $_POST['num2'];
+    if(!empty($_POST["n1"]) && !empty($_POST["n2"]) && !empty($_POST["oper"])){
+        $n1 = $_POST['n1'];
+        $n2 = $_POST['n2'];
         $oper = $_POST['oper'];
         $ans = "";
         
@@ -39,58 +39,24 @@ $footer = file_get_contents('templates/footer.html');
         switch($oper){
             case "sub":
                 $n3 = $n1 - $n2;
-                $ans = strval($n1) . " - " . strval($n2) . " = " . strval($n3);
                 break;
             case "mul":
                 $n3 = $n1 * $n2;
-                $ans = strval($n1) . " * " . strval($n2) . " = " . strval($n3);
                 break;
             case "div":
                 $n3 = $n1 / $n2;
-                $ans = strval($n1) . " / " . strval($n2) . " = " . strval($n3);
                 break;
             default:
                 $n3 = $n1 + $n2;
-                $ans = strval($n1) . " + " . strval($n2) . " = " . strval($n3);
                 break;
         
         }
-
-        $headerData = ["pagetitle" => "Result Page"];
-        $bodyData = ["name" => "Result", "msg" => "Your Result: " . $ans];
-        $footerData = [
-            "footertitle" => "Result Page", 
-            "localtime" => date('l jS \of F Y h:i:s A')
-        ];
-        echo $m->render($header, $headerData) . PHP_EOL;
-        echo $m->render($body, $bodyData) . PHP_EOL;
-        echo $m->render($footer, $footerData) . PHP_EOL;
+        printf($n3);
 
     } else {
-
-        $headerData = ["pagetitle" => "Error Page"];
-        $bodyData = ["name" => "Error", "msg" => "Please enter proper data into the Calculator."];
-        $footerData = [
-            "footertitle" => "Error Page", 
-            "localtime" => date('l jS \of F Y h:i:s A') 
-        ];
-
-        echo $m->render($header, $headerData) . PHP_EOL;
-        echo $m->render($body, $bodyData) . PHP_EOL;
-        echo $m->render($footer, $footerData) . PHP_EOL;
+    printf("error");
     }
 } else {
-    
-        $headerData = ["pagetitle" => "Error Page"];
-        $bodyData = ["name" => "Error", "msg" => "Please enter proper data into the Calculator."];
-        $footerData = [
-            "footertitle" => "Error Page", 
-            "localtime" => date('l jS \of F Y h:i:s A') 
-        ];
-        
-        echo $m->render($header, $headerData) . PHP_EOL;
-        echo $m->render($body, $bodyData) . PHP_EOL;
-        echo $m->render($footer, $footerData) . PHP_EOL;
+    printf("error");
 }
-
 ?>
