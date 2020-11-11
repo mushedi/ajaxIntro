@@ -11,38 +11,59 @@ function validNum(str) {
     return re.test(str);
 }
 
+function sendData(n1, n2, oper){
+    $.ajax({
+        url: 'calc.php',
+        type: 'POST',
+        data: {n1: n1, n2: n2, oper: oper},
+        success: function(val){
+            $("#msg").css("color", "black");
+            $("#msg").html("Result: " + val);
+
+        },
+        error: function(val){
+            console.log(val);
+        }
+    })
+}
 
 function validate(){
 
     let errMsg = '';
     let n1 = $('#num1').val().trim();
     let n2 = $('#num2').val().trim();
+    let operList = $('div.radio-padding').find("input[name='oper']");
+    let oper;
+
+    for (const c of operList){
+        if (c.checked){
+            oper = c.value;
+            break;
+        }
+    }
 
     $('#num1').val(n1);
     $('#num2').val(n2);
 
     if( n1 == '' || n2 == ''){
-        errMsg += "Inputs cannot be empty! Please enter a number. <br>";
+        errMsg += "Inputs cannot be empty! Please enter a number.";
     } else if(!validNum(n1)){
-        errMsg += "Please enter a valid number. EX: 8756 <br>";
+        errMsg += "Please enter a valid number. EX: 8756";
     } else if(!validNum(n2)){
-        errMsg += "Please enter a valid number. EX: 8756 <br>";
+        errMsg += "Please enter a valid number. EX: 8756";
     }
 
-    return errMsg;
+    if(errMsg === "") {
+        sendData(n1, n2, oper);
+    } else {
+        $("#msg").html(errMsg);
+    }
+    return;
 
 }
 
 $(document).ready(function() {
     $("#calculate").click(function() {
-        let check = validate();
-        let submit = '';
-        if(check == ''){
-            submit =  true;
-        } else {
-            $("#msg").html(check + "<br>");
-            submit = false;
-        }
-        return submit;
+        validate();
     });
 });
