@@ -22,7 +22,7 @@ function sendData(n1, n2, oper){
 
         },
         error: function(val){
-            console.log(val);
+            $("#msg").html(val);
         }
     })
 }

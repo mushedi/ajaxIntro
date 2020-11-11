@@ -54,9 +54,9 @@ $footer = file_get_contents('templates/footer.html');
         printf($n3);
 
     } else {
-    printf("error");
+    printf("Processing error, please make sure you enter proper data into the calculator.");
     }
 } else {
-    printf("error");
+    printf("Server error, please make sure you enter proper data into the calculator.");
 }
 ?>
