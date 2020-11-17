@@ -18,11 +18,21 @@ function sendData(n1, n2, oper){
         data: {n1: n1, n2: n2, oper: oper},
         success: function(val){
             $("#msg").css("color", "black");
-            $("#msg").html("Result: " + val);
+
+            if(oper === 'mul'){
+                $("#msg").html(n1 + " * " + n2 + " = " + val);
+            }else if (oper === 'sub'){
+                $("#msg").html(n1 + " - " + n2 + " = " + val);
+            }else if (oper === 'div'){
+                $("#msg").html(n1 + " / " + n2 + " = " + val);
+            } else {
+                $("#msg").html(n1 + " + " + n2 + " = " + val);
+            }
+            
 
         },
         error: function(val){
-            $("#msg").html(val);
+            $("#msg").html("Please make sure you enter proper data into the calculator.");
         }
     })
 }
