@@ -16,7 +16,8 @@ $headerData = ["pagetitle" => "Calculator Page"];
 $calcData = ["name" => "Calculator Page"];
 $footerData = [
     "footertitle" => "Calculator Page", 
-    "localtime" => date('l jS \of F Y h:i:s A')
+    "localtime" => date('l jS \of F Y h:i:s A'),
+    "script" => "src='js/main.js'"
 ];
 
 echo $m->render($header, $headerData) . PHP_EOL;
